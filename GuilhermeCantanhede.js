@@ -29,8 +29,7 @@ app.put("/guilhermecantanhede/estadi", async(req, res ) => {
 })
 
 app.get("/guilhermecantanhede/jugadors", async(req, res) => {
-  let jugadors = {}
-  let jugador = await mundial.doc("final22cantanhede").get()
-  console.log(jugador)
-  res.json(jugador)
+  let taula = await mundial.doc("final22cantanhede").get()
+  res.json(taula.data().info)
+
 })
